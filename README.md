@@ -12,8 +12,8 @@ Challenges entered: **Best Use of Gemma 4** and **Best Open-Source AI Project**.
 
 ## Team
 
-| Name (GitHub) | Role / part built |
-| --- | --- |
+| Name (GitHub) |
+| --- |
 |  prabhanjana joshi ([Prabhanjana123](https://github.com/Prabhanjana123)) 
 |  sushanth somannavar[sushanthrs360](https://github.com/sushanthrs360)) 
 |  aman kamat ([amankamat101](https://github.com/amankamat101))
