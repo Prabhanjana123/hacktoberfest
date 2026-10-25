@@ -14,11 +14,11 @@ Challenges entered: **Best Use of Gemma 4** and **Best Open-Source AI Project**.
 
 | Name (GitHub) | Role / part built |
 | --- | --- |
-| TODO: full name ([@Prabhanjana123](https://github.com/Prabhanjana123)) | TODO: actual contribution |
-| TODO: full name ([@sushanthrs360](https://github.com/sushanthrs360)) | TODO: actual contribution |
-| TODO: third member and GitHub handle | TODO: actual contribution |
+|  prabhanjana joshi ([Prabhanjana123](https://github.com/Prabhanjana123)) 
+|  sushanth somannavar[sushanthrs360](https://github.com/sushanthrs360)) 
+|  aman kamat ([amankamat101](https://github.com/amankamat101))
 
-Replace every TODO with the real registered team details before submission.
+
 
 ## Demo flow
 
