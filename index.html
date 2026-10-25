@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>StockPulse</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="pulse-dot"></span>StockPulse <small>when the news and the price disagree</small></div>
+  <form id="search" class="search">
+    <input id="ticker" placeholder="Ticker, e.g. NVDA or INFY.NS" autocomplete="off">
+    <select id="window" title="Analysis window">
+      <option value="5" selected>5 days</option><option value="10">10 days</option><option value="20">20 days</option>
+    </select>
+    <label class="replay" title="Use the last saved run (offline demo)"><input type="checkbox" id="replay"> Replay</label>
+    <button type="submit">Analyze</button>
+  </form>
+  <div id="health" class="health"></div>
+</header>
+
+<div class="layout">
+  <aside class="side">
+    <h3>Biggest decliners <button id="refresh" class="link" title="Refresh">↻</button></h3>
+    <ul id="watchlist"><li class="muted">Loading watchlist…</li></ul>
+  </aside>
+
+  <main id="main">
+    <section id="empty" class="empty">
+      <h1>Pick a stock that just fell.</h1>
+      <p>StockPulse reads the price, the chart and the headlines. When they disagree, Gemma 4 proposes competing
+        explanations, and an independent evidence checker tells you which ones the evidence actually supports.</p>
+    </section>
+
+    <section id="stock" hidden>
+      <div class="stock-head">
+        <div><h2 id="s-name"></h2><div id="s-meta" class="muted"></div></div>
+        <div class="price"><div id="s-price"></div><div id="s-change"></div></div>
+      </div>
+      <div class="grid2">
+        <div class="card"><h4>Price · last 90 sessions</h4><canvas id="chart" height="190"></canvas></div>
+        <div class="card" id="detector-card">
+          <h4>Contradiction detector</h4>
+          <div id="detector"></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="row-between"><h4>Collected headlines <span id="h-count" class="muted"></span></h4>
+          <div id="sentbar" class="sentbar"></div></div>
+        <ul id="headlines" class="headlines"></ul>
+      </div>
+
+      <div class="card" id="price-facts-card"><h4>Price evidence (computed, not generated)</h4><ul id="pricefacts" class="facts"></ul></div>
+
+      <section id="investigation" hidden>
+        <div class="inv-head">
+          <h3>Investigation</h3>
+          <div id="inv-summary" class="muted"></div>
+        </div>
+        <div class="chartread card"><img id="seen-chart" alt="Chart image sent to Gemma">
+          <div><h4>What Gemma saw in the chart</h4><p id="chart-reading"></p></div></div>
+        <div id="hypotheses" class="hyps"></div>
+      </section>
+
+      <details class="card trace"><summary>Gemma 4 call trace</summary><table id="trace"></table></details>
+    </section>
+  </main>
+</div>
+
+<div id="tooltip" class="tooltip" hidden></div>
+<div id="toast" class="toast" hidden></div>
+<script src="/static/app.js"></script>
+</body>
+</html>
